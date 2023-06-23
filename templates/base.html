@@ -13,23 +13,32 @@
 
     
     <style>
-
+        
         .float-container {
             border: 3px solid #fff;
             padding: 20px;
+            height: fit-content;
+            display: flex;
+
         }
         
         .float-child {
-            width: 50%;
-            float: left;
+            width: 49%;
             padding: 20px;
             border: 2px solid rgb(244, 91, 91);
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
         }  
 
     .a {
             text-align: center;
           }
     </style>
+
 </head>
 
 <body>
@@ -58,6 +67,19 @@
     <div class="container">
         <div id="content" style="margin-top:2em">{% block content %}{% endblock %}</div>
     </div>
+
+    <script>
+      let btn = document.getElementById('downloadBtn');
+      let link = document.getElementById('downloadLink');
+
+      function downloadData () {
+        link.click();
+      }
+
+      btn.addEventListener('click', function (){
+        downloadData();
+      })
+    </script>
 
     
 </body>
